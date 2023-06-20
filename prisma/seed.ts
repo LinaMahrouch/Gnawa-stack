@@ -39,6 +39,27 @@ async function seed() {
       userId: user.id,
     },
   });
+  const posts = [
+    {
+      slug: "my-first-post",
+      title: "My first post yay!",
+      content : "content content"
+    },
+    {
+      slug: "post",
+      title: "My second post yay!",
+      content : "content content2"
+    },
+
+  ];
+  
+  for (const post of posts) {
+    await prisma.post.upsert({
+      where: { slug: post.slug },
+      update: post,
+      create: post,
+    });
+  }
 
   console.log(`Database has been seeded. 🌱`);
 }
