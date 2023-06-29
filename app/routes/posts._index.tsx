@@ -25,7 +25,7 @@ export default function PostsRoute() {
       <h1>Posts</h1>
       {posts.map((post) => (
         <li key={post.slug}>
-          <Link to="{post.slug}" className="text-orange-700 underline">
+          <Link to={post.slug}  prefetch="intent" className="text-orange-700 underline">
             {post.title}
           </Link>
         </li>
