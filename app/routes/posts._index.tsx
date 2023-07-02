@@ -23,6 +23,7 @@ export default function PostsRoute() {
   return (
     <main>
       <h1>Posts</h1>
+      <Link to = "user" className="text-blue-600 underline">User</Link>
       {posts.map((post) => (
         <li key={post.slug}>
           <Link to={post.slug}  prefetch="intent" className="text-orange-700 underline">
@@ -32,7 +33,6 @@ export default function PostsRoute() {
       ))}
       <ul>
       </ul>
-
     </main>
   )
 }
